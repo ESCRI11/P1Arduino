@@ -1,22 +1,39 @@
-int led = 4;
-int lednocurrent = 5;
-int inputpin = 6;
-int val = 0;
-int valorreal = 0;
+int led1 = 5;
+int led2 = 6;
+int led3 = 9;
+int i = 0;
+int j = 0;
+int k = 0;
 
 void setup() {
-  pinMode(led, OUTPUT);
-  pinMode(inputpin, INPUT);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
 }
 
 void loop () {
-  val = digitalRead(inputpin);
-  if (val == HIGH) {
-    digitalWrite(lednocurrent, LOW);
-    digitalWrite(led, HIGH);
-  }
-  else {
-    digitalWrite(led, LOW);
-    digitalWrite(lednocurrent, HIGH);
-  }
+      for (i = 0; i < 255; i++) {
+        analogWrite(led1, i);
+        delay(5);
+      }
+      for (i = 255; i > 0; i--) {
+        analogWrite(led1, i);
+        delay(5);
+      }
+      for (j = 85; j < 255; j++) {
+        analogWrite(led2, j);
+        delay(5);
+      }
+      for (j = 255; j > 0; j--) {
+        analogWrite(led2, j);
+        delay(5);
+      }
+      for (k = 170; k < 255; k++) {
+        analogWrite(led3, i);
+        delay(5);
+      }
+      for (k = 255; k > 0; k--) {
+        analogWrite(led3, i);
+        delay(5);
+      }
 }
