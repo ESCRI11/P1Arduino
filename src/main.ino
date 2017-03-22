@@ -1,23 +1,20 @@
 int led = 2;
-int temps = 10;
+int temps = 8;
 
 void setup() {
   pinMode(led, OUTPUT);
 }
 
 void loop () {
-  digitalWrite(led, HIGH);
-  waitforit(temps);
+  digitalWrite(led, HIGH); //blue
+  waitforit(0);
   digitalWrite(led, LOW);
-  waitforit(temps);
-  digitalWrite(led+1, HIGH);
-  waitforit(temps);
+  digitalWrite(led+1, HIGH); //green
+  waitforit(2);
   digitalWrite(led+1, LOW);
-  waitforit(temps);
-  digitalWrite(led+2, HIGH);
-  waitforit(temps);
+  digitalWrite(led+2, HIGH); //red
+  waitforit(5);
   digitalWrite(led+2, LOW);
-  waitforit(temps);
 }
 
 int waitforit (int espera) {
