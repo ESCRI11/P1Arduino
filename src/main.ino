@@ -6,7 +6,11 @@ void setup() {
 
 void loop () {
   digitalWrite(led, HIGH);
-  delay(1000);
+  waitforit(1000);
   digitalWrite(led, LOW);
-  delay(1000);
+  waitforit(1000);
+}
+
+int waitforit (int espera) {
+  delay(espera);
 }
