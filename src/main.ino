@@ -1,21 +1,17 @@
-int led = 2;
-int temps = 1;
+int led = 4;
+int inputpin = 6;
+int val = 0;
+int valorreal = 0;
 
 void setup() {
   pinMode(led, OUTPUT);
+  pinMode(inputpin, INPUT);
 }
 
 void loop () {
-  digitalWrite(led, HIGH);
-  digitalWrite(led+1, HIGH);
-  digitalWrite(led+2, HIGH);
-  waitforit(temps);
-  digitalWrite(led, LOW);
-  digitalWrite(led+1, LOW);
-  digitalWrite(led+2, LOW);
-  waitforit(temps);
-}
-
-int waitforit (int espera) {
-  delay(espera);
+  val = digitalRead(inputpin);
+  if (val == HIGH) {
+    digitalWrite(led, HIGH);
+  }
+  else {digitalWrite(led, LOW);}
 }
